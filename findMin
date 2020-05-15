@@ -1,0 +1,33 @@
+#include <stdio.h>
+
+double min(double *pointer);
+
+int main(void) {
+
+	double ary[10] = {0};
+
+	for (int i = 0; i < 10; i++)
+	{
+
+		scanf_s("%lf", &ary[i]);
+	}
+
+	double* pointer = &ary;
+	printf("%f", min(pointer));
+	return 0;
+}
+
+double min(double *array_pointer) {
+
+	double min_val = array_pointer[0];
+
+	for (int i = 1; i < 10; i ++) {
+
+		if (min_val > array_pointer[i]) {
+
+			min_val = array_pointer[i];
+		}
+	}
+
+	return min_val;
+}
